@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:interview_test_app/screens/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       home: const MyHomePage(),
     );
@@ -85,7 +86,6 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 80,
             ),
-
             TextFormField(
               decoration: InputDecoration(
                 hintText: 'Phone Number',
@@ -101,8 +101,6 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 50,
             ),
-            
-            
             Container(
               width: double.infinity,
               height: 50,
@@ -159,7 +157,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
-            
             SizedBox(
               height: 40,
             ),
@@ -174,6 +171,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 onPressed: () {
                   //Get.off();
+                  Get.off(HomePage());
                 },
                 style: ElevatedButton.styleFrom(
                   primary: Colors.white,

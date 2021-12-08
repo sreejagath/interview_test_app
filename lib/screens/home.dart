@@ -21,10 +21,15 @@ class _HomePageState extends State<HomePage> {
             children: [
               Row(
                 children: [
-                  Image.asset('assets/image_data/sidemenu.png'),
+                  Image.asset('assets/images/sidemenu.png'),
                   Text('Car Shoppee',
-                
-                  )
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black)
+                  ),
+                  SizedBox(width: 10),
+                  
                 ],
               )
             ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:interview_test_app/screens/second.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +20,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0x44000000).withAlpha(1),
         elevation: 0,
         //title: Text("Car Shoppe"),
-        leading: Image.asset('assets/images/sidemenu.png'),
+        leading: Image.asset('assets/images/sidemenu.png',
+          color: Colors.white,),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.shopping_bag),
@@ -99,8 +102,13 @@ class _HomePageState extends State<HomePage> {
                             SizedBox(
                               width: 10,
                             ),
-                            Image.asset('assets/images/carspa.png',
-                                height: 90, width: 90),
+                            GestureDetector(
+                              onTap: () {
+                                Get.to(SecondPage());
+                              },
+                              child: Image.asset('assets/images/carspa.png',
+                                  height: 90, width: 90),
+                            ),
                             SizedBox(
                               width: 10,
                             ),
@@ -130,7 +138,6 @@ class _HomePageState extends State<HomePage> {
                         childAspectRatio: 1.0,
                         mainAxisExtent: 120.0,
                         mainAxisSpacing: 10.0,
-                        
                       ),
                       children: [
                         Container(

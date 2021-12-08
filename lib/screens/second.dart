@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:interview_test_app/screens/home.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class SecondPage extends StatefulWidget {
+  const SecondPage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _SecondPageState createState() => _SecondPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -18,7 +20,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0x44000000).withAlpha(1),
         elevation: 0,
         title: Text("Car Shoppe"),
-        leading: Image.asset('assets/images/sidemenu.png'),
+        leading: Image.asset(
+          'assets/images/sidemenu.png',
+          color: Colors.white,
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.shopping_bag),
@@ -73,7 +78,7 @@ class _HomePageState extends State<HomePage> {
             height: 300,
             width: MediaQuery.of(context).size.width,
             child: Image.asset(
-              'assets/images/banner.jpg',
+              'assets/images/banner2.jpg',
               fit: BoxFit.cover,
             ),
           ),
@@ -88,17 +93,22 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Container(
                       height: 100,
-                      color: Colors.black,
+                      color: Colors.white,
                       width: MediaQuery.of(context).size.width,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset('assets/images/shoppe_btn.png',
-                              height: 90, width: 90),
+                          GestureDetector(
+                            onTap: () {
+                              Get.to(HomePage());
+                            },
+                            child: Image.asset('assets/images/shoppe.png',
+                                height: 90, width: 90),
+                          ),
                           SizedBox(
                             width: 10,
                           ),
-                          Image.asset('assets/images/carspa.png',
+                          Image.asset('assets/images/carspa_btn.png',
                               height: 90, width: 90),
                           SizedBox(
                             width: 10,
@@ -127,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
                       childAspectRatio: 1.0,
-                      mainAxisExtent: 150.0,
+                      mainAxisExtent: 120.0,
                       mainAxisSpacing: 10.0,
                     ),
                     children: [
@@ -135,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/0.png',
+                            'assets/images/carwash.png',
                             height: 200,
                             width: 200,
                           )),
@@ -143,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/1.png',
+                            'assets/images/mechanic.png',
                             height: 200,
                             width: 200,
                           )),
@@ -151,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/2.png',
+                            'assets/images/polish.png',
                             height: 200,
                             width: 200,
                           )),
@@ -159,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/3.png',
+                            'assets/images/detai.png',
                             height: 200,
                             width: 200,
                           )),
@@ -167,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/4.png',
+                            'assets/images/bick.png',
                             height: 200,
                             width: 200,
                           )),
@@ -175,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                           height: 100,
                           width: 100,
                           child: Image.asset(
-                            'assets/images/5.png',
+                            'assets/images/housekeep.png',
                             height: 200,
                             width: 200,
                           )),
